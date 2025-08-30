@@ -1,3 +1,10 @@
 .titulo{
     text-align: center;
 }
+.bg-light {
+    background-color: #e5e5e5 !important;
+}
+
+.ratio {
+    border: 1px solid #222;
+}

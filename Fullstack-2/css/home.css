@@ -27,4 +27,16 @@
   display: block; /* evita espacios debajo de la imagen */
 }
 
+.header header {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.header .col-md-3,
+.header .text-end {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
