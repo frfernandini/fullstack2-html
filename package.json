@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/frfernandini/fullstack2-html/issues"
   },
-  "homepage": "https://github.com/frfernandini/fullstack2-html#readme"
+  "homepage": "https://github.com/frfernandini/fullstack2-html#readme",
+  "devDependencies": {
+    "typescript": "^5.9.2"
+  }
 }
