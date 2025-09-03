@@ -28,4 +28,33 @@ body {
 .card-text {
   font-size: 16px;
   color: #333;
+};
+
+.container-encabezado{
+    margin-left: 150px;
+    margin-right: 150px;
+    border: 3px solid rgb(0, 0, 0);
+    border-radius: 20px;
+}
+
+.container-products {
+  max-width: 1500px;
+  margin: 50px auto 50px;     /*Importante: orden [arriba] [izquierda/derecha] [abajo]*/
+  display: flex;           /*alinear contenedores */
+  flex-wrap: wrap;         /*Los contenedores bajen a la siguiente fila */
+  gap: 30px;               /* espacio entre los contenedores individuales*/
+}
+
+/*Cada Contenedor*/
+.card-product {
+  width: 265px;
+  border: 3px solid #00000081;  
+  border-radius: 15px; 
+}
+
+/* Imagen */
+.card-product img {
+  width: 100%;   /* ocupa todo el ancho del contenedor */
+  height: 200px;  /* mantiene la proporción original */
+  display: block; /* evita espacios debajo de la imagen */
 }
