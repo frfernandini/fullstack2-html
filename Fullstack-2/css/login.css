@@ -19,12 +19,7 @@ body {
     width: 150px;
     margin-bottom: 20px;
 }
-/*.form-signin img{
-    background-color: #1f1f1f !important;
-    border-radius: 10px;
-    padding: 5px;
-    box-shadow: 0 0 10px rgba(30, 144,255, 0.5);
-}*/
+
 h2{
     font-family: 'Orbitron',sans-serif;
     color: #1E90FF;
@@ -61,14 +56,14 @@ a:hover{
     background-color: #1f1f1f;
     border-bottom: 1px solid #1E90FF;
     /*esto es nuevo*/
-    padding: 0.5rem 0;
+    padding: 1rem 0;
 }
 /*esto es nuevo*/
 .header header{
     padding: 0 1rem;
 }
 .d-flex.justify-content-center.align-items-center {
-    padding: 1rem;
+    padding: 3rem 1rem;
     flex: 1;
 }
 
@@ -82,13 +77,37 @@ header svg:hover{
 
 .form-signin{
     width: 100%;
-    max-width: 280px;
-    padding: 1.5rem !important;
+    max-width: 420px;
+    padding: 2.5rem !important;
     background-color: #1a1a1a;
     border: 1px solid #1E90FF;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgb(30, 144, 255,0.3);
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgb(30, 144, 255,0.3);
 }
+.form-signin img{
+    width: 130px !important;
+    height: auto;
+    margin-bottom: 2rem !important;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+.form-signin h1{
+    font-family: 'Orbitron', sans-serif;
+    color: #1E90FF;
+    text-align: center;
+    margin-bottom: 2.5rem !important;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 10px rgb(30,144 ,255,0.7);
+}
+
+
+   
+
 
 /*.header header {
     padding-left: 2rem;
