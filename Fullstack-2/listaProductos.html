@@ -8,11 +8,15 @@
   <link rel="stylesheet" href="css/listaProductos.css">
 </head>
 <body>
-  <header class="border-bottom">
-    <div class="container d-flex flex-wrap align-items-center justify-content-between py-3">
-      <a href="index.html" class="navbar-brand d-flex align-items-center">
-        <img src="img/level-up-gamer.svg" alt="logo">
-      </a>
+  <div id="header"></div>
+    <script>
+    fetch('header.html')
+    .then(res => res.text())
+    .then(html => {
+        document.getElementById('header').innerHTML = html;
+    });
+    </script>
+
 
       <ul class="nav">
         <li class="nav-item"><a href="index.html" class="nav-link px-2">Home</a></li>
