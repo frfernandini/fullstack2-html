@@ -74,22 +74,6 @@ a:hover{
     /*esto es nuevo*/
     padding: 1rem 0;
 }
-/*esto es nuevo*/
-.header header{
-    padding: 0 1rem;
-}
-.d-flex.justify-content-center.align-items-center {
-    padding: 3rem 1rem;
-    flex: 1;
-}
-
-header svg{
-    fill: #1E90FF;
-    transition: 0.3s ease;
-}
-header svg:hover{
-    fill: #39FF14;
-}
 
 .form-signin{
     width: 100%;
