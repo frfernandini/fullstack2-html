@@ -15,21 +15,25 @@
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h2>Productos Registrados</h2>
             <div>
-                <button class="btn btn-outline-primary me-2" onclick="">
-                    <i class="bi bi-arrow-clockwise"></i> Agregar nuevo producto
+                <button class="btn btn-outline-secondary me-2" onclick="window.location.href='admin.html'">
+                    <i class="bi bi-house"></i> Dashboard
+                </button>
+                <button class="btn btn-outline-success me-2" onclick="window.location.href='admin_agregar_producto.html'">
+                    <i class="bi bi-plus-circle"></i> Agregar Producto
                 </button>
             </div>
         </div>
-        <table class="table table-striped" id="tabla-usuarios">
+        <table class="table table-striped" id="tabla-productos">
             <thead>
                 <tr>
-                    <th>Nombre</th>
-                    <th>Correo</th>
-                    <th>Fecha de registro</th>
+                    <th>ID</th>
+                    <th>Título</th>
+                    <th>Categoría</th>
+                    <th>Precio</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- Usuarios se agregan aquí -->
+                <!-- Productos se agregan aquí -->
             </tbody>
         </table>
             </div>
@@ -44,7 +48,7 @@
     });
     </script>
 
-    <script src="../src/js/admin_usuarios.js"></script>
+    <script src="../src/js/admin_listado_productos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -1,0 +1,56 @@
+/* Solo estilos para el contenido principal, sin tocar el sidebar */
+.main-content {
+    flex: 1;
+    background-color: #f8f9fa;
+    padding: 2rem;
+}
+
+/* Título más grande */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Cards del dashboard */
+.card {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.card-title {
+    color: #495057;
+    font-weight: 600;
+}
+
+/* Botones */
+.btn {
+    border-radius: 6px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .d-flex.flex-wrap {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}

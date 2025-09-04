@@ -1,0 +1,25 @@
+/* Solo estilos para el contenido principal, sin tocar el sidebar */
+.main-content {
+    flex: 1;
+    background-color: #f8f9fa;
+    padding: 2rem;
+}
+
+/* Título más grande */
+h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main-content {
+        padding: 1rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+}

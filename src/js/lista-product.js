@@ -1,5 +1,5 @@
 //CREANDO LISTADO DE PRODUCTOS
-const productos = {
+const productosEstaticos = {
     JM001: {
         Categoria: "Juegos de Mesa",
         Titulo: "Catan",
@@ -74,28 +74,52 @@ const productos = {
 
 //APLICANDO LOGICA
 
-//INICIALIZAR EL CONTENEDOR PRINCIPAL DONDE IRAN LOS PRODUCTOS
-const container = document.getElementById("productContainer")
+// Función para cargar productos del localStorage
+function cargarProductosAgregados() {
+    const productosJSON = localStorage.getItem('productos');
+    return productosJSON ? JSON.parse(productosJSON) : {};
+}
 
-for (let i in productos){
-    const prod = productos[i];
+// Función para combinar productos estáticos con los agregados
+function obtenerTodosLosProductos() {
+    const productosAgregados = cargarProductosAgregados();
+    return { ...productosEstaticos, ...productosAgregados };
+}
 
-    //SE CREA UN ELEMENTO DE TIPO DIV-CONTAINER
+// Función para crear una card de producto
+function crearCardProducto(prod) {
     const card = document.createElement("div");
-    //IMPLEMENTA ATRIBUTO 
     card.classList.add("card-product");
 
-    //SE CREAN LAS CARD
     card.innerHTML = `
         <div class="card-product">
             <img src="${prod.imagen}" alt="${prod.Titulo}">
         </div>
         <div>
             <h3 class="title">${prod.Titulo}</h3>
-            <p class="price">$${prod.Precio}</p>
+            <p class="price">$${prod.Precio.toLocaleString()}</p>
             <button class="btn btn-primary">Agregar</button>
         </div>
     `;
 
-    container.appendChild(card);
+    return card;
 }
+
+// Función para mostrar todos los productos
+function mostrarProductos() {
+    const container = document.getElementById("productContainer");
+    const todosLosProductos = obtenerTodosLosProductos();
+    
+    // Limpiar contenedor
+    container.innerHTML = '';
+    
+    // Mostrar todos los productos
+    for (let id in todosLosProductos) {
+        const prod = todosLosProductos[id];
+        const card = crearCardProducto(prod);
+        container.appendChild(card);
+    }
+}
+
+// Ejecutar cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', mostrarProductos);
