@@ -10,44 +10,69 @@
 <body>
     <div id="header"></div>
     <script>
-    fetch('header.html')
-    .then(res => res.text())
-    .then(html => {
-        document.getElementById('header').innerHTML = html;
-    });
+        fetch('header.html')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('header').innerHTML = html;
+            });
     </script>
-    <div class="custom-carousel">
-        <div id="carouselExampleIndicators" class="carousel slide">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="img/ps5-test.png" class="d-block w-20" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="img/Logo-Level-UP.png" class="d-block w-20" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="img/ps5-test.png" class="d-block w-20" alt="...">
+
+    <div id="my-carousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <!-- Primer slide -->
+            <div class="carousel-item active">
+                <img src="img/Logo-Level-UP.png" class="d-block w-100" alt="Oferta 1">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3>Gran Oferta 1</h3>
+                    <h4>Titulo</h4>
+                    <p>Descripción corta de la oferta o producto destacado.</p>
+                    <a href="#" class="btn btn-primary">Comprar Ahora</a>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+            <!-- Segundo slide -->
+            <div class="carousel-item">
+                <img src="img/ps5-test.png" class="d-block w-100" alt="Oferta 2">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3>Gran Oferta 2</h3>
+                    <h4>Titulo</h4>
+                    <p>Descripción corta de la oferta o producto destacado.</p>
+                    <a href="#" class="btn btn-primary">Comprar Ahora</a>
+                </div>
+            </div>
+            <!-- Tercer slide -->
+            <div class="carousel-item">
+                <img src="img/ps5-test.png" class="d-block w-100" alt="Oferta 3">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3>Gran Oferta 3</h3>
+                    <h4>Titulo</h4>
+                    <p>Descripción corta de la oferta o producto destacado.</p>
+                    <a href="#" class="btn btn-primary">Comprar Ahora</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controles (flechas) -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#my-carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#my-carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+        </button>
+
+        <!-- Indicadores (puntos) -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#my-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#my-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#my-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
     </div>
     <div class="container-products" id="productContainer"></div>
     <aside></aside>
     <footer></footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-<script src="../src/js/home.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="../src/js/home.js"></script>
 </body>
 </html>
