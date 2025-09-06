@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/producto_detalles.css">
+</head>
+<body>
+    <div id="header"></div>
+    <script>
+        fetch('header.html')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById('header').innerHTML = html;
+            });
+    </script>
+    <div class="my-container">
+        <div class="producto-detalle">
+            <!-- Imagen principal -->
+            <div>
+                <img id="mainImage" src="img/ps5-test.png" alt="Producto" class="img-fluid rounded shadow">
+            </div>
+            <!-- Descripción y compra -->
+            <div>
+                <h2>Nombre del Producto</h2>
+                <p class="descripcion">"Una camiseta cómoda y estilizada, con la posibilidad de personalizarla con tu gamer tag o diseño favorito.</p>
+                <h4 class="precio">$1,299.00</h4>
+                <button class="btn-comprar">Comprar</button>
+            </div>
+        </div>
+        <!-- Listado de imagenes miniaturas -->
+        <div>
+            <div class="miniaturas-barra">
+                <img class=" miniatura" src="img/Logo-Level-UP.png" alt="Miniatura 1" style="width: 80px; height: 80px; object-fit: cover;">
+                <img class="miniatura" src="img/ps5-test.png" alt="Miniatura 2" style="width: 80px; height: 80px; object-fit: cover;">
+                <img class="miniatura" src="img/Logo-Level-UP.png" alt="Miniatura 3" style="width: 80px; height: 80px; object-fit: cover;">
+            </div>
+        </div>
+    </div>
+    <footer></footer>
+    <script src="../src/js/producto_detalles.js"></script>  
+</body>
+</html>
