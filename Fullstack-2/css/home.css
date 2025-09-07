@@ -28,8 +28,8 @@
 }
 
 #my-carousel {
-  width: 90%; /* Ocupa todo el ancho de la página */
-  max-width: 1700px; /* Ajusta este valor según el ancho deseado */
+  width: 90%; 
+  max-width: 1700px; 
   margin: 0px auto 50px; /* Centra el carrusel horizontalmente */
   border: 3px solid #00ff62;  
   border-radius: 30px;
@@ -42,8 +42,8 @@
 
 
 #my-carousel .carousel-item img {
-  object-fit: contain; /* Mantiene la proporción completa de la imagen */
-  width: 100%; /* Ocupa todo el ancho del contenedor */
+  object-fit: contain; /* Mantener la proporción imagen */
+  width: 100%; 
   height: auto; /* Ajusta la altura automáticamente */
   max-height: 500px; /* Opcional: limita la altura máxima */
   display: block; /* Asegura que no haya espacios debajo de la imagen */
