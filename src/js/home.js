@@ -93,18 +93,17 @@ function crearCardProducto(prod) {
     card.classList.add("card-product");
 
     card.innerHTML = `
-        <div class="card-product">
-            <img src="${prod.imagen}" alt="${prod.Titulo}">
+        <img src="${prod.imagen}" alt="${prod.Titulo}">
+        <div class="card-content">
+            <h3 class="card-titulo">${prod.Titulo}</h3>
+            <p class="card-precio">$${prod.Precio.toLocaleString()}</p>
+            <p class="card-desc">${prod.Descripcion}</p>
         </div>
-        <div>
-            <p class="attributes">${prod.Descripcion}</p>
-            <h3 class="title">${prod.Titulo}</h3>
-            <p class="price">$${prod.Precio.toLocaleString()}</p>
-        </div>
+        <button class="btn btn-primary">Agregar</button>
     `;
-
     return card;
 }
+
 
 // Función para mostrar todos los productos
 function mostrarProductos() {
