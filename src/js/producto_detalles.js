@@ -9,7 +9,6 @@ const todosLosProductos = { ...productosEstaticos, ...cargarProductosAgregados()
 const producto = todosLosProductos[productId];
 
 const detalleDiv = document.getElementById('detalle-producto');
-const barraRelacionados = document.getElementById('productos-relacionados');
 
 if (producto) {
     detalleDiv.innerHTML = `
@@ -36,9 +35,9 @@ const miniaturas = document.querySelectorAll('.miniatura');
 
 miniaturas.forEach(miniatura => {
     miniatura.addEventListener('click', function() {
-        const tempSrc = mainImage.src;
+        const eve = mainImage.src;
         mainImage.src = this.src;
-        this.src = tempSrc;
+        this.src = eve;
     });
 });
 
@@ -58,27 +57,36 @@ for (let id in todosLosProductos) {
 // Tomar solo 6 productos relacionados
 relacionados = relacionados.slice(0, 6);
 
+
 // Mostrar los productos en la barra
 relacionadosBarra.innerHTML = "";
-for (let rel of relacionados) {
-    // Se crea un elemento de tipo div
-    let div = document.createElement("div");
-    //se implementan una clase llamado relacionado al div
-    div.classList.add("relacionado");
-    div.dataset.id = rel.id;
+if (relacionados.length === 0) {
 
-    div.innerHTML = `
-        <img src="${rel.imagen}" alt="${rel.Titulo}">
-        <p>${rel.Titulo}</p>
-    `;
+    let mensajeR = document.createElement("h3");
+    mensajeR.classList.add("no-relacionado");
+    mensajeR.textContent = "No existen productos relacionados";
+    relacionadosBarra.appendChild(mensajeR);
 
-    //Interactuabilidad: Al hacer clic en un producto relacionado, redirige a su página de detalles
-    div.addEventListener("click", () => {
-        window.location.href = `productos_detalles.html?id=${rel.id}`;
-    });
+}else{
+    for (let rel of relacionados) {
+        // Se crea un elemento de tipo div
+        let div = document.createElement("div");
+        //se implementan una clase llamado relacionado al div
+        div.classList.add("relacionado");
+        div.dataset.id = rel.id;
 
-    relacionadosBarra.appendChild(div);
+        div.innerHTML = `
+            <img src="${rel.imagen}" alt="${rel.Titulo}">
+            <p>${rel.Titulo}</p>
+        `;
+
+        //Interactuabilidad: Al hacer clic en un producto relacionado, redirige a su página de detalles
+        div.addEventListener("click", () => {
+            window.location.href = `productos_detalles.html?id=${rel.id}`;
+        });
+
+        relacionadosBarra.appendChild(div);
+    }
 }
-
 
 

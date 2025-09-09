@@ -50,6 +50,12 @@
 }
 
 /* CADA PRODUCTO */
+.no-relacionado {
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 1.1rem;
+    margin: 20px 0;
+}
 .relacionado {
     text-align: center;
     color: #D3D3D3;
