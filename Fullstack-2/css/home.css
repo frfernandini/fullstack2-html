@@ -21,6 +21,7 @@ html, body {
   display: flex;           /*alinear contenedores */
   flex-wrap: wrap;         /*Los contenedores bajen a la siguiente fila */
   gap: 30px;               /* espacio entre los contenedores individuales*/
+  justify-content: center; /* centrar las cards horizontalmente */
 }
 
 /*Cada Contenedor*/
