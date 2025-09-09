@@ -12,7 +12,7 @@ function mostrarUsuarios() {
     if (usuarios.length === 0) {
         tbody.innerHTML = `
             <tr>
-                <td colspan="3" class="text-center text-muted">
+                <td colspan="4" class="text-center text-muted">
                     No hay usuarios registrados
                 </td>
             </tr>
@@ -23,13 +23,53 @@ function mostrarUsuarios() {
     tbody.innerHTML = '';
     usuarios.forEach((usuario, index) => {
         const fila = document.createElement('tr');
+        // Formatear fecha si existe
+        const fechaFormateada = usuario.fecha || usuario.fechaRegistro || 'No disponible';
+        const nombreCompleto = `${usuario.nombre || ''} ${usuario.apellido || ''}`.trim();
+        const correo = usuario.correo || usuario.email || 'No disponible';
+        
         fila.innerHTML = `
-            <td>${usuario.nombre}</td>
-            <td>${usuario.correo}</td>
-            <td>${usuario.fecha}</td>
+            <td>${nombreCompleto}</td>
+            <td>${correo}</td>
+            <td>${fechaFormateada}</td>
+            <td>
+                <button class="btn btn-sm btn-outline-primary me-1" onclick="verDetalleUsuario(${index})" title="Ver detalles">
+                    <i class="bi bi-eye"></i>
+                </button>
+                <button class="btn btn-sm btn-outline-warning me-1" onclick="editarUsuario(${index})" title="Editar">
+                    <i class="bi bi-pencil"></i>
+                </button>
+                <button class="btn btn-sm btn-outline-danger" onclick="eliminarUsuario(${index})" title="Eliminar">
+                    <i class="bi bi-trash"></i>
+                </button>
+            </td>
         `;
         tbody.appendChild(fila);
     });
+}
+
+function verDetalleUsuario(index) {
+    const usuarios = cargarUsuarios();
+    const usuario = usuarios[index];
+    
+    if (!usuario) {
+        alert('Usuario no encontrado');
+        return;
+    }
+    
+    const detalles = `
+        Nombre: ${usuario.nombre || 'No disponible'} ${usuario.apellido || ''}
+        Email: ${usuario.correo || usuario.email || 'No disponible'}
+        País: ${usuario.pais || 'No disponible'}
+        Género: ${usuario.genero || 'No disponible'}
+        Fecha de registro: ${usuario.fecha || usuario.fechaRegistro || 'No disponible'}
+    `;
+    
+    alert(detalles);
+}
+
+function editarUsuario(index) {
+    alert('Funcionalidad de edición en desarrollo');
 }
 
 function eliminarUsuario(index) {
