@@ -1,10 +1,31 @@
 .titulo{
     text-align: center;
+    color: #FFFFFF;
 }
 .bg-light {
-    background-color: #e5e5e5 !important;
+    background-color: #1a1a1a !important;
+}
+
+.bg-light h2 {
+    color: #FFFFFF;
+}
+
+.bg-light p {
+    color: #D3D3D3;
+}
+
+.btn-outline-dark {
+    color: #39FF14;
+    border-color: #39FF14;
+}
+
+.btn-outline-dark:hover {
+    background-color: #39FF14;
+    color: #1f1f1f; /* Texto oscuro */
+    border-color: #39FF14;
+    box-shadow: 0 0 10px #39FF14;
 }
 
 .ratio {
-    border: 1px solid #222;
+    border: 1px solid #39FF14;
 }

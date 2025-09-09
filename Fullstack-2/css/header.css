@@ -17,3 +17,34 @@ header svg{
 header svg:hover{
 	fill: #39FF14;
 }
+
+.btn-outline-primary {
+  color: #39FF14;
+  border-color: #39FF14;
+}
+
+.btn-outline-primary:hover {
+  background-color: #39FF14;
+  color: #1f1f1f; /* Texto oscuro sobre fondo neón */
+  border-color: #39FF14;
+}
+
+.btn-outline-light {
+  color: #39FF14; /* Color del icono del carrito */
+  border-color: #39FF14;
+}
+
+.btn-outline-light:hover {
+  background-color: #39FF14;
+  color: #1f1f1f; /* Icono oscuro sobre fondo neón */
+  border-color: #39FF14;
+}
+
+.navbar-nav .nav-link {
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #39FF14 !important;
+}

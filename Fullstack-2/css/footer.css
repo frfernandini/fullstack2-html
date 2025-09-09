@@ -3,9 +3,8 @@ footer {
     color: #f8f9fa; /* Light text color for contrast */
     padding-top: 2rem;
     padding-bottom: 2rem;
-    width: 100% !important; /* Ensure full width */
+    width: 100vw !important; /* Ensure full viewport width */
     margin: 0 !important;
-    padding: 0 !important;
 }
 
 .footer .container-fluid {
@@ -13,6 +12,12 @@ footer {
     padding-right: 0 !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
+}
+
+#footer-placeholder {
+    width: 100vw !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 .payment-methods img {
@@ -26,10 +31,27 @@ footer {
 }
 
 .nav-link:hover {
-    color: #007bff; /* Example hover color */
+    color: #39FF14; /* Example hover color */
 }
 
-.input-group .form-control,
-.input-group .btn {
-    border-color: #495057; /* Consistent border color */
+.footer p {
+    color: #D3D3D3;
+}
+
+.input-group .btn-secondary {
+    background-color: #39FF14;
+    color: #1f1f1f; /* Texto oscuro */
+    border-color: #39FF14;
+}
+
+.input-group .btn-secondary:hover {
+    background-color: #39FF14;
+    border-color: #39FF14;
+    box-shadow: 0 0 10px #39FF14;
+}
+
+.input-group .form-control {
+    background-color: #1a1a1a; /* Fondo oscuro para el input */
+    border-color: #495057; /* Borde consistente */
+    color: #FFFFFF; /* Texto blanco para el input */
 }

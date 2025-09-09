@@ -1,6 +1,6 @@
 .my-container{
-    border: 2px solid #000000;
-    background-color:#0000009c;
+    border: 2px solid #39FF14;
+    background-color: #1a1a1a;
     max-width: 1200px;    /* Limita el ancho máximo */
     margin: auto;
     padding: 50px;       /* Espacio interno */
@@ -13,9 +13,14 @@
     gap: 32px;
 }
 
+.producto-detalle h2 {
+    color: #FFFFFF;
+}
+
 .descripcion {
     font-size: 1.2rem;
     font-weight: 400;
+    color: #D3D3D3;
 }
 
 /*CONTENEDOR DE PRODUCTOS RELACIONADOS */
@@ -25,8 +30,8 @@
     margin-right: 25px;
     margin-bottom: 50px;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.781);
-    border-top: 2px solid #198754;
+    background-color: #212529;
+    border-top: 2px solid #39FF14;
     border-radius: 8px;
 }
 
@@ -47,7 +52,7 @@
 /* CADA PRODUCTO */
 .relacionado {
     text-align: center;
-    color: #fff;
+    color: #D3D3D3;
     max-width: 150px;
     cursor: pointer;
 }
@@ -57,35 +62,37 @@
     height: 120px;
     object-fit: contain;
     border-radius: 8px;
-    border: 2px solid #047c54;
+    border: 2px solid #39FF14;
     background-color: #ffffff1e;
     margin-bottom: 10px;
 }
 
 .relacionado:hover {
-    box-shadow: 0 0 12px #0dfd41;
+    box-shadow: 0 0 12px #39FF14;
     border-radius: 6px;
 }
 
 .precio {
-    color: #198754;
+    color: #39FF14;
     margin-bottom: 1rem;
 }
 
 /*BOTONES*/
 .btn-comprar {
     margin: 30px auto 30px;
-    background-color: #15fd0d;
+    background-color: #39FF14;
     color: #000000;
     padding: 0.5rem 2.5rem;
     font-size: 1.1rem;
-    border: 2px  solid #000000;
+    border: 2px  solid #39FF14;
     border-radius: 6px;
     cursor: pointer;
 }
 
 .btn-comprar:hover {
-    background-color: #04d9ff;
+    background-color: #39FF14;
+    border-color: #39FF14;
+    box-shadow: 0 0 15px #39FF14;
 }
 
 /*BARRA DE MINIATURAS*/
@@ -99,12 +106,12 @@
     width: 80px;
     height: 80px;
     border-radius: 6px;
-    border: 2px solid #ffffff;
+    border: 2px solid #39FF14;
     cursor: pointer;
     transition: box-shadow 0.2s;
-    background-color:#ffffff1e
+    background-color:#212529;
 }
 
 .miniatura:hover {
-    box-shadow: 0 0 8px #0dfd41;
+    box-shadow: 0 0 8px #39FF14;
 }

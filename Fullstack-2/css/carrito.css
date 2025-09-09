@@ -9,7 +9,7 @@ main {
 .product-item {
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #444;
     padding: 15px 0;
 }
 .product-item img {
@@ -21,32 +21,78 @@ main {
 }
 .product-info {
     flex-grow: 1;
+    color: #FFFFFF;
+}
+
+.product-info p {
+    color: #D3D3D3;
 }
 .quantity-control {
     display: flex;
     align-items: center;
-    border: 1px solid #ddd;
+    border: 1px solid #39FF14;
     border-radius: 5px;
     overflow: hidden;
 }
 .quantity-control button {
-    background: #f8f9fa;
+    background: #39FF14;
     border: none;
+    color: #1f1f1f;
     padding: 5px 10px;
     cursor: pointer;
 }
+
+.quantity-control button:hover {
+    box-shadow: 0 0 8px #39FF14;
+}
 .quantity-control span {
     padding: 5px 10px;
-    border-left: 1px solid #ddd;
-    border-right: 1px solid #ddd;
+    border-left: 1px solid #39FF14;
+    border-right: 1px solid #39FF14;
+    background-color: #212529;
+    color: #FFFFFF;
 }
 .order-summary {
-    border: 1px solid #eee;
+    border: 1px solid #444;
     padding: 20px;
     border-radius: 5px;
-    background-color: #f8f9fa;
+    background-color: #1a1a1a;
+    color: #FFFFFF; /* Texto principal para el resumen */
 }
 .total-price {
     font-size: 1.5rem;
     font-weight: bold;
+    color: #FFFFFF;
+}
+
+.order-summary label {
+    color: #D3D3D3;
+}
+
+.input-group .form-control {
+    background-color: #212529;
+    border-color: #444;
+    color: #FFFFFF;
+}
+
+.input-group .btn-outline-secondary {
+    color: #39FF14;
+    border-color: #39FF14;
+}
+
+.input-group .btn-outline-secondary:hover {
+    background-color: #39FF14;
+    color: #1f1f1f;
+    border-color: #39FF14;
+    box-shadow: 0 0 10px #39FF14;
+}
+
+.btn-success {
+    background-color: #39FF14;
+    border-color: #39FF14;
+    color: #1f1f1f;
+}
+
+.btn-success:hover {
+    box-shadow: 0 0 10px #39FF14;
 }

@@ -1,6 +1,7 @@
 body {
-  background-color: #f8f9fa;
-  font-family: Arial, sans-serif;
+  background-color: #1f1f1f;
+  font-family: 'Roboto', sans-serif;
+  color: #FFFFFF;
 }
 
 .navbar-brand img {
@@ -18,22 +19,24 @@ body {
 
 .card:hover {
   transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(57, 255, 20, 0.7);
 }
 
 .card-title {
+  color: #FFFFFF;
   font-size: 18px;
   font-weight: bold;
 }
 
 .card-text {
   font-size: 16px;
-  color: #333;
+  color: #D3D3D3;
 };
 
 .container-encabezado{
     margin-left: 150px;
     margin-right: 150px;
-    border: 3px solid rgb(0, 0, 0);
+    border: 3px solid #39FF14;
     border-radius: 20px;
 }
 
@@ -48,8 +51,9 @@ body {
 /*Cada Contenedor*/
 .card-product {
   width: 265px;
-  border: 3px solid #00000081;  
+  border: 3px solid #39FF14;  
   border-radius: 15px; 
+  box-shadow: 0 0 15px rgba(57, 255, 20, 0.7);
 }
 
 /* Imagen */
