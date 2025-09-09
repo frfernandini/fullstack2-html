@@ -1,60 +1,65 @@
-body {
-  background-color: #f8f9fa;
-  font-family: Arial, sans-serif;
-}
-
-.navbar-brand img {
-  width: 80px;
-  height: auto;
-}
-
-.productos-container {
-  padding: 40px 0;
-}
-
-.card {
-  transition: transform 0.2s ease-in-out;
-}
-
-.card:hover {
-  transform: scale(1.05);
-}
-
-.card-title {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.card-text {
-  font-size: 16px;
-  color: #333;
-};
-
-.container-encabezado{
-    margin-left: 150px;
-    margin-right: 150px;
-    border: 3px solid rgb(0, 0, 0);
-    border-radius: 20px;
-}
-
+/* Contenedor principal */
 .container-products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center; /* centrar cards */
+  margin: 50px auto;
   max-width: 1500px;
-  margin: 50px auto 50px;     /*Importante: orden [arriba] [izquierda/derecha] [abajo]*/
-  display: flex;           /*alinear contenedores */
-  flex-wrap: wrap;         /*Los contenedores bajen a la siguiente fila */
-  gap: 30px;               /* espacio entre los contenedores individuales*/
 }
 
-/*Cada Contenedor*/
+/* Cada card */
 .card-product {
-  width: 265px;
-  border: 3px solid #00000081;  
-  border-radius: 15px; 
+  display: flex;
+  flex-direction: column; /* contenido en columna */
+  justify-content: space-between; /* separa imagen/texto y botón */
+  width: 300px; /* ancho base */
+  border: 3px solid #07b690;
+  border-radius: 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  background-color: #000000d2;
+}
+
+.card-product:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Imagen */
 .card-product img {
-  width: 100%;   /* ocupa todo el ancho del contenedor */
-  height: 200px;  /* mantiene la proporción original */
-  display: block; /* evita espacios debajo de la imagen */
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* TEXTO(titulo+precio+descripción) */
+.card-content {
+  flex-grow: 1; /* ocupa todo el espacio disponible */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Título */
+.card-titulo {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Precio */
+.card-precio {
+  font-size: 20px;
+  color: #08bd71;
+  margin-bottom: 5px;
+}
+
+/* Descripción */
+.card-desc {
+  font-size: 14px;
+  color: #ffffff;
+  margin-bottom: 15px;
 }
