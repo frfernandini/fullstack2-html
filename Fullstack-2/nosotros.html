@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/footer.css">
+    <!-- Nosotros CSS debe ir al final para sobrescribir otros estilos -->
+    <link rel="stylesheet" href="css/nosotros.css">
 </head>
 <body>
     <div id="header-placeholder"></div>
@@ -18,17 +20,163 @@
                 document.getElementById('header-placeholder').innerHTML = data;
             });
     </script>
-    <main class="container my-5">
-        <h1 class="text-center mb-4">Sobre Nosotros</h1>
-        <p class="text-center lead">Aquí puedes encontrar información sobre nuestra empresa, nuestra misión y nuestros valores.</p>
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-                <p>Somos una empresa dedicada a...</p>
-                <p>Nuestra misión es...</p>
-                <p>Contáctanos para más información.</p>
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <h1 class="hero-title">Conoce a <span class="text-gradient">Level Up Gamer</span></h1>
+            <p class="hero-subtitle">
+                Somos más que una tienda gaming. Somos una comunidad apasionada por llevar tu experiencia de juego al siguiente nivel con los mejores productos y el servicio más profesional del mercado.
+            </p>
+            
+            <!-- Estadísticas -->
+            <div class="stats-container">
+                <div class="stat-card">
+                    <span class="stat-number">50K+</span>
+                    <span class="stat-label">Gamers Satisfechos</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">Productos Gaming</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Años de Experiencia</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Soporte Técnico</span>
+                </div>
             </div>
         </div>
-    </main>
+    </section>
+
+    <!-- Sección Principal -->
+    <section class="about-section">
+        <div class="container">
+            <h2 class="section-title">¿Por qué elegirnos?</h2>
+            <p class="section-subtitle">
+                Nos diferenciamos por nuestro compromiso con la calidad, la innovación y la satisfacción del cliente. Cada producto que ofrecemos ha sido cuidadosamente seleccionado para brindarte la mejor experiencia gaming.
+            </p>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="bi bi-shield-check"></i>
+                    </div>
+                    <h3 class="feature-title">Productos Garantizados</h3>
+                    <p class="feature-description">
+                        Todos nuestros productos cuentan con garantía oficial y soporte técnico especializado. Tu inversión está protegida con nosotros.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="bi bi-lightning-charge"></i>
+                    </div>
+                    <h3 class="feature-title">Tecnología de Vanguardia</h3>
+                    <p class="feature-description">
+                        Ofrecemos los productos más innovadores del mercado gaming, desde las últimas GPUs hasta periféricos de última generación.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="bi bi-people-fill"></i>
+                    </div>
+                    <h3 class="feature-title">Comunidad Gamer</h3>
+                    <p class="feature-description">
+                        Más que clientes, formas parte de nuestra familia gamer. Participa en eventos, torneos y recibe consejos de expertos.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Valores -->
+    <section class="values-section">
+        <div class="container">
+            <h2 class="section-title">Nuestros Valores</h2>
+            <p class="section-subtitle">
+                Los principios que guían cada decisión y nos mantienen como líderes en el mercado gaming.
+            </p>
+            
+            <div class="values-grid">
+                <div class="value-item">
+                    <div class="value-icon">
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                    <h3 class="value-title">Excelencia</h3>
+                    <p class="value-description">
+                        Buscamos la perfección en cada producto y servicio que ofrecemos, sin comprometer la calidad.
+                    </p>
+                </div>
+                
+                <div class="value-item">
+                    <div class="value-icon">
+                        <i class="bi bi-heart-fill"></i>
+                    </div>
+                    <h3 class="value-title">Pasión por el Gaming</h3>
+                    <p class="value-description">
+                        Somos gamers auténticos que entienden las necesidades reales de la comunidad.
+                    </p>
+                </div>
+                
+                <div class="value-item">
+                    <div class="value-icon">
+                        <i class="bi bi-arrow-up-circle"></i>
+                    </div>
+                    <h3 class="value-title">Innovación</h3>
+                    <p class="value-description">
+                        Siempre a la vanguardia de las últimas tendencias y tecnologías del mundo gaming.
+                    </p>
+                </div>
+                
+                <div class="value-item">
+                    <div class="value-icon">
+                        <i class="bi bi-handshake"></i>
+                    </div>
+                    <h3 class="value-title">Confianza</h3>
+                    <p class="value-description">
+                        Construimos relaciones duraderas basadas en la transparencia y el servicio excepcional.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección del Equipo -->
+    <section class="team-section">
+        <div class="container">
+            <h2 class="section-title">Nuestro Equipo</h2>
+            <p class="section-subtitle">
+                Profesionales apasionados por el gaming que trabajan día a día para brindarte la mejor experiencia.
+            </p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">¿Listo para Level Up?</h2>
+            <p class="cta-description">
+                Únete a miles de gamers que ya confiaron en nosotros para mejorar su setup gaming.
+            </p>
+            <a href="listaProductos.html" class="btn-cta">
+                <i class="bi bi-controller me-2"></i>
+                Ver Productos
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
