@@ -1,0 +1,35 @@
+footer {
+    background-color: #212529; /* Dark background color for the footer */
+    color: #f8f9fa; /* Light text color for contrast */
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    width: 100% !important; /* Ensure full width */
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.footer .container-fluid {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.payment-methods img {
+    /* Adjust size or add margin if needed */
+    margin-right: 5px; 
+}
+
+.nav-link {
+    /* Ensure category links match mockup style */
+    color: #f8f9fa; /* Light text color */
+}
+
+.nav-link:hover {
+    color: #007bff; /* Example hover color */
+}
+
+.input-group .form-control,
+.input-group .btn {
+    border-color: #495057; /* Consistent border color */
+}
