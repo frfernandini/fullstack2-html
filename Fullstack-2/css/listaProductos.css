@@ -31,7 +31,7 @@ body {
 .card-text {
   font-size: 16px;
   color: #D3D3D3;
-};
+}
 
 .container-encabezado{
     margin-left: 150px;
@@ -40,25 +40,68 @@ body {
     border-radius: 20px;
 }
 
+/* Contenedor principal */
 .container-products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center; /* centrar cards */
+  margin: 50px auto;
   max-width: 1500px;
-  margin: 50px auto 50px;     /*Importante: orden [arriba] [izquierda/derecha] [abajo]*/
-  display: flex;           /*alinear contenedores */
-  flex-wrap: wrap;         /*Los contenedores bajen a la siguiente fila */
-  gap: 30px;               /* espacio entre los contenedores individuales*/
 }
 
-/*Cada Contenedor*/
+/* Cada card */
 .card-product {
   width: 265px;
   border: 3px solid #39FF14;  
   border-radius: 15px; 
   box-shadow: 0 0 15px rgba(57, 255, 20, 0.7);
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  box-sizing: border-box;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  background-color: #000000d2;
+}
+
+.card-product:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(57, 255, 20, 0.9);
 }
 
 /* Imagen */
 .card-product img {
-  width: 100%;   /* ocupa todo el ancho del contenedor */
-  height: 200px;  /* mantiene la proporción original */
-  display: block; /* evita espacios debajo de la imagen */
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* TEXTO(titulo+precio+descripción) */
+.card-content {
+  flex-grow: 1; /* ocupa todo el espacio disponible */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Título */
+.card-titulo {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Precio */
+.card-precio {
+  font-size: 20px;
+  color: #08bd71;
+  margin-bottom: 5px;
+}
+
+/* Descripción */
+.card-desc {
+  font-size: 14px;
+  color: #ffffff;
+  margin-bottom: 15px;
 }
