@@ -71,7 +71,7 @@ function mostrarCarrito() {
     if (carrito.length === 0) {
         cartItems.innerHTML = `
             <div class="text-center p-4">
-                <i class="bi bi-cart-x" style="font-size: 3rem; color: #6c757d;"></i>
+                <i class="bi bi-cart-x" style="font-size: 3rem; color: #000000ff;"></i>
                 <h5 class="mt-3 text-muted">Tu carrito está vacío</h5>
                 <p class="text-muted">¡Agrega algunos productos increíbles!</p>
                 <a href="listaProductos.html" class="btn btn-primary">Ver Productos</a>
