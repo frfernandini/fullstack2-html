@@ -33,14 +33,8 @@ function mostrarUsuarios() {
             <td>${correo}</td>
             <td>${fechaFormateada}</td>
             <td>
-                <button class="btn btn-sm btn-outline-primary me-1" onclick="verDetalleUsuario(${index})" title="Ver detalles">
-                    <i class="bi bi-eye"></i>
-                </button>
-                <button class="btn btn-sm btn-outline-warning me-1" onclick="editarUsuario(${index})" title="Editar">
-                    <i class="bi bi-pencil"></i>
-                </button>
-                <button class="btn btn-sm btn-outline-danger" onclick="eliminarUsuario(${index})" title="Eliminar">
-                    <i class="bi bi-trash"></i>
+                <button class="btn btn-sm btn-outline-danger" onclick="eliminarUsuario(${index})" title="Eliminar usuario">
+                    <i class="bi bi-trash"></i> Eliminar
                 </button>
             </td>
         `;

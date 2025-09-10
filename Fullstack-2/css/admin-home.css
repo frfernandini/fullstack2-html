@@ -89,4 +89,7 @@ h1 {
         width: 100%;
         margin-bottom: 0.5rem;
     }
+    .container-fluid{
+        color: #ffffff;
+    }
 }
