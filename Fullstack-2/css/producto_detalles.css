@@ -9,8 +9,18 @@
 
 .producto-detalle {
     display: flex;
-    align-items: flex-start;
+    flex-wrap: wrap;           /* Permite que los elementos bajen si no hay espacio */
+    justify-content: center;   /* Centra el contenido */
     gap: 32px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.imagen-principal,
+.info-detalle {
+    flex: 1 1 00px;       /* Crece, reduce, mínimo 300px */
+    max-width: 800px;
+    box-sizing: border-box;
 }
 
 .producto-detalle h2 {
