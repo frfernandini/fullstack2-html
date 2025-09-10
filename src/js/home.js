@@ -1,85 +1,4 @@
-//CREANDO LISTADO DE PRODUCTOS
-//CREANDO LISTADO DE PRODUCTOS
-const productosEstaticos = {
-    JM001: {
-        Categoria: "Juegos de Mesa",
-        Titulo: "Catan",
-        Descripcion: "Un clásico juego de estrategia donde los jugadores compiten por colonizar y expandirse en la isla de Catan. Ideal para 3-4 jugadores y perfecto para noches de juego en familia o con amigos.",
-        Precio: 29990,
-        imagen: "img/catan.png"
-    },
-    JM002: {
-        Categoria: "Juegos de Mesa",
-        Titulo: "Carcassonne",
-        Descripcion: " Un juego de colocación de fichas donde los jugadores construyen el paisajealrededor de la fortaleza medieval de Carcassonne. Ideal para 2-5 jugadores y fácil deaprender.",
-        Precio: 24990,
-        imagen: "img/carcassonne.png"
-    },
-    AC001: {
-        Categoria: "Accesorios",
-        Titulo: "Controlador Inalámbrico Xbox Series X",
-        Descripcion: "Ofrece una experiencia de juego cómoda con botones mapeables y una respuesta táctil mejorada. Compatible con consolas Xbox y PC.",
-        Precio: 59990,
-        imagen: "img/xbox_controller.png"
-    },
-    AC002: {
-        Categoria: "Accesorios",
-        Titulo: "Auriculares Gamer HyperX Cloud II",
-        Descripcion: "Proporcionan un sonido envolvente de calidad con un micrófono desmontable y almohadillas de espuma viscoelástica para mayor comodidad durante largas sesiones de juego.",
-        Precio: 79990,
-        imagen: "img/hyperx_cloud.png"
-    },
-    CO001: {
-        Categoria: "Consolas",
-        Titulo: "PlayStation 5",
-        Descripcion: " La consola de última generación de Sony, que ofrece gráficos impresionantes y tiempos de carga ultrarrápidos para una experiencia de juego inmersiva.",
-        Precio: 549990,
-        imagen: "img/ps5-test.png"
-    },
-    CG001: {
-        Categoria: "Computadores Gamers",
-        Titulo: "PC Gamer ASUS ROG Strix",
-        Descripcion: "Un potente equipo diseñado para los gamers más exigentes, equipado con los últimos componentes para ofrecer un rendimiento excepcional en cualquier juego",
-        Precio: 1299990,
-        imagen: "img/pc gamer.png"
-    },
-    SG001: {
-        Categoria: "Sillas Gamers",
-        Titulo: "Silla Gamer Secretlab Titan ",
-        Descripcion: " Diseñada para el máximo confort, esta silla ofrece un soporte ergonómico y personalización ajustable para sesiones de juego prolongadas",
-        Precio: 349990,
-        imagen: "img/ps5-test.png"
-    },
-    MS001: {
-        Categoria: "Mouse",
-        Titulo: "Mouse Gamer Logitech G502 HERO",
-        Descripcion: " Con sensor de alta precisión y botones personalizables, este mouse es ideal para gamers que buscan un control preciso y personalización",
-        Precio: 49990,
-        imagen: "img/mouse.png"
-    },
-    MP001: {
-        Categoria: "Mousepad",
-        Titulo: "Mousepad Razer Goliathus Extended Chroma",
-        Descripcion: "Ofrece un área de juego amplia con iluminación RGB personalizable, asegurando una superficie suave y uniforme para el movimiento del mouse.",
-        Precio: 29990,
-        imagen: "img/mousepad.png" 
-    },
-    PP001: {
-        Categoria: "Poleras Personalizadas",
-        Titulo: "Polera Gamer Personalizada 'Level-Up'",
-        Descripcion: "Una camiseta cómoda y estilizada, con la posibilidad de personalizarla con tu gamer tag o diseño favorito",
-        Precio: 14990,
-        imagen: "img/polera_gamer_life.png" 
-    }
-};
 
-//APLICANDO LOGICA
-
-// Función para cargar productos del localStorage
-function cargarProductosAgregados() {
-    const productosJSON = localStorage.getItem('productos');
-    return productosJSON ? JSON.parse(productosJSON) : {};
-}
 
 // Función para combinar productos estáticos con los agregados
 function obtenerTodosLosProductos() {
@@ -88,38 +7,83 @@ function obtenerTodosLosProductos() {
 }
 
 // Función para crear una card de producto
-function crearCardProducto(prod) {
+function crearCardProducto(prod, id) {
     const card = document.createElement("div");
     card.classList.add("card-product");
+
+    // Calcular precio final si tiene oferta y redondear al entero
+    let precioFinal = prod.Precio;
+    let precioHTML = `<p class="card-precio">$${prod.Precio.toLocaleString()}</p>`;
+
+    if (prod.oferta && prod.descuento > 0) {
+        precioFinal = Math.round(prod.Precio - (prod.Precio * prod.descuento / 100));
+        precioHTML = `
+            <p class="card-precio">
+                <span class="text-muted text-decoration-line-through">$${prod.Precio.toLocaleString()}</span><br>
+                <span class="fw-bold text-success">$${precioFinal.toLocaleString()}</span>
+            </p>
+            <span class="badge bg-danger">-${prod.descuento}% OFF</span>
+        `;
+    }
 
     card.innerHTML = `
         <img src="${prod.imagen}" alt="${prod.Titulo}">
         <div class="card-content">
             <h3 class="card-titulo">${prod.Titulo}</h3>
-            <p class="card-precio">$${prod.Precio.toLocaleString()}</p>
+            ${precioHTML}
             <p class="card-desc">${prod.Descripcion}</p>
         </div>
-        <button class="btn btn-primary">Agregar</button>
+        <button class="btn-agregar" data-id="${id}" data-precio="${precioFinal}">Agregar al Carrito</button>
     `;
+
+    card.addEventListener('click', function(event) {
+        if(event.target.tagName !== 'BUTTON') {
+            // Redirige a la pagina de detalles con el id del producto de la url
+            window.location.href = `productos_detalles.html?id=${id}`;
+        }
+    });
+
     return card;
 }
 
 
 // Función para mostrar todos los productos
 function mostrarProductos() {
+    // Busca el contenedor principal
     const container = document.getElementById("productContainer");
+
+    // Obtener todos los productos
     const todosLosProductos = obtenerTodosLosProductos();
-    
-    // Limpiar contenedor
+
+    // Limpiar el contenedor
     container.innerHTML = '';
-    
-    // Mostrar todos los productos
+
+    // Crear una lista vacía para guardar los productos con oferta
+    const productosConOferta = [];
+
+    // Recorrer todos los productos
     for (let id in todosLosProductos) {
         const prod = todosLosProductos[id];
-        const card = crearCardProducto(prod);
+
+        // Verificar si el producto tiene oferta
+        if (prod.oferta) {
+            productosConOferta.push({ id: id, producto: prod });
+        }
+
+        // Limitar la lista a 4 productos
+        if (productosConOferta.length === 4) {
+            break; //forzar el cierre del loop habiendo 4 productos
+        }
+    }
+
+    // Mostrar los productos con oferta
+    for (let i = 0; i < productosConOferta.length; i++) {
+        const item = productosConOferta[i];
+        const card = crearCardProducto(item.producto, item.id);
         container.appendChild(card);
     }
 }
 
 // Ejecutar cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', mostrarProductos);
+

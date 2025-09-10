@@ -1,3 +1,4 @@
+
 // Obtener ID del producto desde la URL
 const params = new URLSearchParams(window.location.search);
 const productId = params.get('id');
@@ -11,6 +12,21 @@ const producto = todosLosProductos[productId];
 const detalleDiv = document.getElementById('detalle-producto');
 
 if (producto) {
+    // Calcular precio final si hay oferta
+    let precioFinal = producto.Precio;
+    let precioHTML = `<p class="precio">$${producto.Precio.toLocaleString()}</p>`;
+
+    if (producto.oferta && producto.descuento > 0) {
+        precioFinal = Math.round(producto.Precio - (producto.Precio * producto.descuento / 100));
+        precioHTML = `
+            <p class="precio">
+                <span class="text-muted text-decoration-line-through">$${producto.Precio.toLocaleString()}</span><br>
+                <span class="fw-bold text-success">$${precioFinal.toLocaleString()}</span>
+            </p>
+            <span class="badge bg-danger">-${producto.descuento}% OFF</span>
+        `;
+    }
+
     detalleDiv.innerHTML = `
         <div class="producto-detalle">
             <div class="imagen-principal">
@@ -22,14 +38,14 @@ if (producto) {
             <div class="info-detalle">
                 <h2>${producto.Titulo}</h2>
                 <p class="descripcion">${producto.Descripcion}</p>
-                <p class="precio">$${producto.Precio.toLocaleString()}</p>
-                <button class="btn-comprar">Comprar</button>
+                ${precioHTML}
+                <button class="btn-agregar" data-id="${producto.id}" data-precio="${precioFinal}">Agregar al Carrito</button>
             </div>
         </div>
     `;
 }
 
-//cambiar la imagen principal por las miniaturas
+// Cambiar la imagen principal por las miniaturas
 const mainImage = document.getElementById('mainImage');
 const miniaturas = document.querySelectorAll('.miniatura');
 
@@ -88,5 +104,7 @@ if (relacionados.length === 0) {
         relacionadosBarra.appendChild(div);
     }
 }
+
+
 
 
