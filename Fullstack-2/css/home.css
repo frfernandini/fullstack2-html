@@ -96,12 +96,6 @@ html, body {
   position: relative;
 }
 
-.titulo-ofertas::before,
-.titulo-ofertas::after {
-  content: "✨";
-  margin: 0 10px;
-  font-size: 1.5rem;
-}
 
 /*BOTÓN AGREGAR AL CARRITO*/
 .btn-agregar {
