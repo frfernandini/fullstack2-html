@@ -35,7 +35,7 @@
                 </div>
                 <!-- Segundo slide -->
                 <div class="carousel-item">
-                    <img src="img/ps5-test.png" class="d-block w-100" alt="Oferta 2">
+                    <img src="img/catan.png" class="d-block w-100" alt="Oferta 2">
                     <div class="carousel-caption d-none d-md-block">
                         <h3>Gran Oferta 2</h3>
                         <h4 style="font-family: 'Orbitron', sans-serif; color: #39FF14;">Titulo</h4>
@@ -73,19 +73,22 @@
             </div>
         </div>
     </div>
+    
     <div class="container-products" id="productContainer"></div>
     
     <!-- Footer fuera del container para que ocupe todo el ancho -->
     <div id="footer-placeholder" class="w-100"></div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <script src="../src/js/home.js"></script>
-    <script>
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-placeholder').innerHTML = data;
-            });
-    </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script src="../src/js/productos.js"></script>
+<script src="../src/js/header.js" defer></script>
+<script src="../src/js/home.js" defer></script>
+<script>
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
+</script>
 </body>
 </html>

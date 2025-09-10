@@ -82,9 +82,23 @@ html, body {
   margin-bottom: 15px;
 }
 
-.card-product button:hover {
-  background-color: #047a49;
-  box-shadow: 0 0 5px #39FF14;
+
+/*BOTÓN AGREGAR AL CARRITO*/
+.btn-agregar {
+    margin: 5px auto 5px;
+    background-color: #39FF14;
+    color: #000000;
+    padding: 0.5rem 0.5rem;
+    font-size: 1.1rem;
+    border: 2px  solid #39FF14;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-agregar:hover {
+    background-color: #39FF14;
+    border-color: #39FF14;
+    box-shadow: 0 0 10px #39FF14;
 }
 
 #my-carousel {

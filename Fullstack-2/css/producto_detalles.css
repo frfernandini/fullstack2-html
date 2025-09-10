@@ -50,6 +50,12 @@
 }
 
 /* CADA PRODUCTO */
+.no-relacionado {
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 1.1rem;
+    margin: 20px 0;
+}
 .relacionado {
     text-align: center;
     color: #D3D3D3;
@@ -73,12 +79,14 @@
 }
 
 .precio {
+    font-size: 1.5rem;
     color: #39FF14;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
-/*BOTONES*/
-.btn-comprar {
+
+/*CARRITO*/
+.btn-agregar {
     margin: 30px auto 30px;
     background-color: #39FF14;
     color: #000000;
@@ -89,10 +97,10 @@
     cursor: pointer;
 }
 
-.btn-comprar:hover {
+.btn-agregar:hover {
     background-color: #39FF14;
     border-color: #39FF14;
-    box-shadow: 0 0 15px #39FF14;
+    box-shadow: 0 0 10px #39FF14;
 }
 
 /*BARRA DE MINIATURAS*/
