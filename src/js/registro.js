@@ -19,28 +19,52 @@ window.limpiarUsuarios = function() {
     console.log('Todos los usuarios han sido eliminados');
 };
 
-window.addEventListener('DOMContentLoaded', () => {
-    const form = document.querySelector('form');
-    const nombreInput = document.getElementById('floatingname');
-    const correoInput = document.getElementById('floatingcorreo');
-
-    form?.addEventListener('submit', (e) => {
+console.log("Archivo registro.js cargado correctamente");
+"use strict";
+window.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector("form");
+    const nombreInput = document.getElementById("floatingname");
+    const correoInput = document.getElementById("floatingcorreo");
+    const contrasenaInput = document.getElementById("floatingcontrasena");
+    const confirmContrasenaInput = document.getElementById("floatingconfirmcontrasena");
+    
+    form?.addEventListener("submit", (e) => {
         e.preventDefault();
+        
         const nombre = nombreInput.value.trim();
         const correo = correoInput.value.trim();
+        const contrasena = contrasenaInput.value.trim();
+        const confirmContrasena = confirmContrasenaInput.value.trim();
         const fecha = new Date().toLocaleString();
-        if (nombre && correo) {
-            const nuevoUsuario = { nombre, correo, fecha };
+        
+        // Validaciones simples
+        const validacionNombre = nombre.length >= 2;
+        const validacionCorreo = correo.includes("@") && correo.includes(".") && correo.length >= 5;
+        const validacionContrasena = contrasena.length >= 4 && contrasena.length <= 20;
+        const validacionConfirm = contrasena === confirmContrasena;
+        
+        if (validacionNombre && validacionCorreo && validacionContrasena && validacionConfirm) {
+            const nuevoUsuario = { nombre, correo, contrasena, fecha };
             guardarUsuario(nuevoUsuario);
             
-            // Mostrar información detallada del usuario registrado
-            console.log('Usuario registrado:', nuevoUsuario);
-            console.log('Total de usuarios:', JSON.parse(localStorage.getItem('usuarios') || '[]').length);
+            console.log("Usuario registrado:", nuevoUsuario);
+            console.log("Total de usuarios:", JSON.parse(localStorage.getItem('usuarios') || '[]').length);
             
-            alert(`Usuario registrado correctamente:\nNombre: ${nombre}\nCorreo: ${correo}\nFecha: ${fecha}`);
-            form.reset();
+            alert("¡Registro exitoso! Redirigiendo al inicio de sesión...");
+            setTimeout(() => {
+                window.location.href = "login.html";
+            }, 1000);
         } else {
-            alert('Por favor, completa nombre y correo');
+            console.log("Información no válida");
+            if (!validacionNombre) {
+                alert("El nombre debe tener al menos 2 caracteres");
+            } else if (!validacionCorreo) {
+                alert("Ingresa un correo válido");
+            } else if (!validacionContrasena) {
+                alert("La contraseña debe tener entre 4 y 20 caracteres");
+            } else if (!validacionConfirm) {
+                alert("Las contraseñas no coinciden");
+            }
         }
     });
 });
