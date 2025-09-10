@@ -43,6 +43,19 @@ if (producto) {
             </div>
         </div>
     `;
+    document.addEventListener('click', (e) => {
+        if (e.target.classList.contains('btn-agregar')) {
+            agregarAlCarrito({
+                id: productId,
+                Titulo: producto.Titulo,
+                Precio: producto.Precio,
+                imagen: producto.imagen,
+                Categoria: producto.Categoria,
+                oferta: producto.oferta || false,
+                descuento: producto.descuento || 0
+            });
+        }
+    });
 }
 
 // Cambiar la imagen principal por las miniaturas
@@ -103,6 +116,75 @@ if (relacionados.length === 0) {
 
         relacionadosBarra.appendChild(div);
     }
+}
+
+// Funciones del carrito (reutilizadas)
+function obtenerCarrito() {
+    return JSON.parse(localStorage.getItem("carrito")) || [];
+}
+
+function guardarCarrito(carrito) {
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    actualizarContadorCarrito();
+}
+
+function agregarAlCarrito(producto) {
+    let carrito = obtenerCarrito();
+    
+    // Verificar si el producto ya existe en el carrito
+    const productoExistente = carrito.find(item => item.id === producto.id);
+    
+    if (productoExistente) {
+        productoExistente.cantidad += 1;
+    } else {
+        carrito.push({
+            ...producto,
+            cantidad: 1
+        });
+    }
+    
+    guardarCarrito(carrito);
+    
+    // Mostrar mensaje de confirmación más elegante
+    mostrarNotificacion(`${producto.Titulo} agregado al carrito`);
+}
+
+function actualizarContadorCarrito() {
+    const carrito = obtenerCarrito();
+    const contador = carrito.reduce((total, producto) => total + producto.cantidad, 0);
+    
+    // Actualizar contador en el header
+    const cartCount = document.getElementById("cart-count");
+    if (cartCount) {
+        cartCount.textContent = contador;
+        cartCount.style.display = contador > 0 ? "inline" : "none";
+    }
+}
+
+function mostrarNotificacion(mensaje) {
+    // Crear notificación toast
+    const toast = document.createElement('div');
+    toast.className = 'position-fixed top-0 end-0 p-3';
+    toast.style.zIndex = '9999';
+    toast.innerHTML = `
+        <div class="toast show" role="alert">
+            <div class="toast-header">
+                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                <strong class="me-auto">Éxito</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+            </div>
+            <div class="toast-body">
+                ${mensaje}
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(toast);
+    
+    // Eliminar después de 3 segundos
+    setTimeout(() => {
+        toast.remove();
+    }, 3000);
 }
 
 
