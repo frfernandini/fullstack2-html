@@ -92,7 +92,7 @@ const productosEstaticos = {
     }
 };
 
-//APLICANDO LOGICA
+
 
 // Función para combinar productos estáticos con los agregados
 function obtenerTodosLosProductos() {

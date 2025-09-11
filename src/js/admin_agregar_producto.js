@@ -28,12 +28,12 @@ window.addEventListener('DOMContentLoaded', () => {
     const precioInput = document.getElementById('floatingprecio');
     const imagenInput = document.getElementById('floatingimagen');
 
-    // ✅ NUEVOS CAMPOS
+    
     const ofertaCheck = document.getElementById('floatingoferta');
     const descuentoInput = document.getElementById('floatingdescuento');
     const descuentoContainer = document.getElementById('descuento-container');
 
-    // Mostrar/ocultar campo de descuento
+    
     ofertaCheck.addEventListener('change', () => {
         descuentoContainer.style.display = ofertaCheck.checked ? 'block' : 'none';
         if (!ofertaCheck.checked) descuentoInput.value = '';
@@ -81,7 +81,7 @@ window.addEventListener('DOMContentLoaded', () => {
             
             alert(`Producto agregado correctamente:\nTítulo: ${titulo}\nCategoría: ${categoria}\nPrecio: $${precio}${oferta?`\nOferta: ${descuento}% de descuento` : ''}`);
             form.reset();
-            descuentoContainer.style.display = 'none'; // ocultar campo descuento
+            descuentoContainer.style.display = 'none'; 
         } else {
             alert('Por favor, completa todos los campos obligatorios correctamente');
         }

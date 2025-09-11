@@ -1,4 +1,4 @@
-/* Solo estilos para el contenido principal, sin tocar el sidebar */
+
 body {
     background-color: #2c3e50;
     color: #ffffff;
@@ -11,7 +11,7 @@ body {
     color: #ffffff;
 }
 
-/* Título más grande */
+
 h2 {
     font-size: 2rem;
     font-weight: 600;

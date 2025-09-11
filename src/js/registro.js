@@ -6,14 +6,14 @@ function guardarUsuario(usuario) {
     localStorage.setItem('usuarios', JSON.stringify(usuarios));
 }
 
-// Función global para ver todos los usuarios (disponible en la consola)
+
 window.verUsuarios = function() {
     const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
     console.table(usuarios);
     return usuarios;
 };
 
-// Función global para limpiar todos los usuarios (disponible en la consola)
+
 window.limpiarUsuarios = function() {
     localStorage.removeItem('usuarios');
     console.log('Todos los usuarios han sido eliminados');

@@ -30,9 +30,6 @@ function agregarAlCarrito(producto) {
     }
     
     guardarCarrito(carrito);
-    
-    // Mostrar mensaje de confirmación más elegante
-    mostrarNotificacion(`${producto.Titulo} agregado al carrito`);
 }
 
 function actualizarContadorCarrito() {
@@ -45,32 +42,6 @@ function actualizarContadorCarrito() {
         cartCount.textContent = contador;
         cartCount.style.display = contador > 0 ? "inline" : "none";
     }
-}
-
-function mostrarNotificacion(mensaje) {
-    // Crear notificación toast
-    const toast = document.createElement('div');
-    toast.className = 'position-fixed top-0 end-0 p-3';
-    toast.style.zIndex = '9999';
-    toast.innerHTML = `
-        <div class="toast show" role="alert">
-            <div class="toast-header">
-                <i class="bi bi-check-circle-fill text-success me-2"></i>
-                <strong class="me-auto">Éxito</strong>
-                <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
-            </div>
-            <div class="toast-body">
-                ${mensaje}
-            </div>
-        </div>
-    `;
-    
-    document.body.appendChild(toast);
-    
-    // Eliminar después de 3 segundos
-    setTimeout(() => {
-        toast.remove();
-    }, 3000);
 }
 
 // Función para crear una card de producto
