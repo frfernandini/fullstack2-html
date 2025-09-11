@@ -1,22 +1,18 @@
-/* Solo estilos para el contenido principal, sin tocar el sidebar */
+/* Estilos simples para agregar usuario */
 body {
     background-color: #2c3e50;
     color: #ffffff;
 }
 
 .main-content {
-    flex: 1;
     background-color: #34495e;
-    padding: 2rem;
     color: #ffffff;
+    padding: 2rem;
 }
 
-/* Título más grande */
 h2 {
-    font-size: 2rem;
-    font-weight: 600;
     color: #ffffff;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     text-align: center;
 }
 
@@ -54,6 +50,10 @@ label {
     color: #bdc3c7;
 }
 
+.form-floating > label {
+    color: #3498db;
+}
+
 .btn {
     border-radius: 6px;
     font-weight: 600;
@@ -83,13 +83,34 @@ label {
     border-color: #6c7b7d;
 }
 
+.is-invalid {
+    border-color: #e74c3c !important;
+}
+
+.invalid-feedback {
+    color: #e74c3c;
+}
+
+.is-valid {
+    border-color: #27ae60 !important;
+}
+
+.valid-feedback {
+    color: #27ae60;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .main-content {
         padding: 1rem;
     }
     
-    h2 {
-        font-size: 1.5rem;
+    .card-body {
+        padding: 1.5rem;
+    }
+    
+    .btn {
+        width: 100%;
+        margin: 0.5rem 0;
     }
 }
