@@ -59,6 +59,17 @@ main {
     background-color: #1a1a1a;
     color: #FFFFFF; /* Texto principal para el resumen */
 }
+/*LISTADO DE PRODUCTOS CARRITO*/
+.card {
+  background-color: #1a1a1a; /* fondo oscuro */
+  border: 1px solid #39FF14; /* borde verde */
+  color: #ffffff;
+}
+
+.text-muted {
+  color: #929191 !important; /* gris claro */
+}
+
 .total-price {
     font-size: 1.5rem;
     font-weight: bold;

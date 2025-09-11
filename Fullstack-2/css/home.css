@@ -82,6 +82,20 @@ html, body {
   margin-bottom: 15px;
 }
 
+/*TITULO OFERTAS*/
+.titulo-ofertas {
+  color: #39FF14;
+  text-align: center;
+  margin: 2rem auto 1.5rem;
+  font-size: 2.2rem;
+  font-family: 'Orbitron', sans-serif;
+  text-shadow: 0 0 5px #39FF14, 0 0 10px #00ff88;
+  border-bottom: 3px solid #39FF14;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+  position: relative;
+}
+
 
 /*BOTÓN AGREGAR AL CARRITO*/
 .btn-agregar {

@@ -15,13 +15,24 @@
     fetch('header.html')
     .then(res => res.text())
     .then(html => {
-        document.getElementById('header-placeholder').innerHTML = html;
-        actualizarContador();
+        document.getElementById('header-placeholder').innerHTML = html
+        actualizarContadorCarrito();
     });
     </script>
   
   <main class="container productos-container">
-    <h1 class="text-center mb-5">PRODUCTOS</h1>
+    <h1 class="text-center mb-5" id="titulo-prod">PRODUCTOS</h1>
+    <nav id="navbar-filtro-categorias" class="navbar">
+      <span class="navbar-brand">Filtrar por Categoría:</span>
+      <div class="dropdown">
+        <button class="dropdown-toggle" id="btnDropdownCategoria">Selecionar Categoría</button>
+        <ul class="dropdown-menu" id="dropdownCategorias">
+          <!--CATEGORIAS AQUI-->
+        </ul>
+      </div>
+      <button id="btnMostrarTodos" class="btn btn-neon">Quitar Filtro</button>
+    </nav>
+
     <div class="container-products" id="productContainer"></div>
   </main>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>

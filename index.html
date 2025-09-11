@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level UP - Tienda Gamer</title>
+    <meta name="description" content="Level UP - Tu tienda gamer de confianza. Encuentra los mejores productos gaming, PC gamer, consolas y accesorios.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="Fullstack-2/css/home.css">
+    <link rel="stylesheet" href="Fullstack-2/css/footer.css">
+    <link rel="stylesheet" href="Fullstack-2/css/header.css">
+    <link rel="icon" href="Fullstack-2/img/Logo-Level-UP.png" type="image/png">
+</head>
+<body>
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+    
+    <!-- Hero Section / Carousel -->
+    <div class="container-fluid p-0">
+        <div id="main-carousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Primer slide -->
+                <div class="carousel-item active">
+                    <img src="Fullstack-2/img/ps5-test.png" class="d-block w-100" alt="PlayStation 5">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>¡Bienvenido a Level UP!</h2>
+                        <h3 style="font-family: 'Orbitron', sans-serif; color: #39FF14;">PlayStation 5 Disponible</h3>
+                        <p>La consola de nueva generación que estabas esperando.</p>
+                        <a href="Fullstack-2/listaProductos.html" class="btn btn-primary btn-lg">Explorar Productos</a>
+                    </div>
+                </div>
+                <!-- Segundo slide -->
+                <div class="carousel-item">
+                    <img src="Fullstack-2/img/pc gamer.png" class="d-block w-100" alt="PC Gamer">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>PC Gaming de Alto Rendimiento</h2>
+                        <h3 style="font-family: 'Orbitron', sans-serif; color: #39FF14;">Arma tu Setup Gamer</h3>
+                        <p>Los mejores componentes para tu PC gamer ideal.</p>
+                        <a href="Fullstack-2/listaProductos.html" class="btn btn-primary btn-lg">Ver Productos</a>
+                    </div>
+                </div>
+                <!-- Tercer slide -->
+                <div class="carousel-item">
+                    <img src="Fullstack-2/img/Xbox_Controller.png" class="d-block w-100" alt="Accesorios Gaming">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>Accesorios Gaming</h2>
+                        <h3 style="font-family: 'Orbitron', sans-serif; color: #39FF14;">Completa tu Setup</h3>
+                        <p>Controles, auriculares, sillas gamer y más.</p>
+                        <a href="Fullstack-2/listaProductos.html" class="btn btn-primary btn-lg">Comprar Ahora</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controles del carousel -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#main-carousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#main-carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+
+            <!-- Indicadores -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#main-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#main-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#main-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección de productos destacados -->
+    <div class="container my-5">
+        <h2 class="text-center mb-4" style="color: #fdfdfd;">Productos Destacados</h2>
+        <div class="container-products" id="productContainer">
+            <!-- Los productos se cargarán dinámicamente -->
+        </div>
+    </div>
+
+    <!-- Sección de categorías -->
+    <div class="container my-5">
+        <h2 class="text-center mb-4" style="color: #fdfdfd;">Explora por Categorías</h2>
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="card bg-dark text-light">
+                    <img src="Fullstack-2/img/ps5-test.png" class="card-img-top" alt="Consolas">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Consolas</h5>
+                        <p class="card-text">PlayStation, Xbox y Nintendo</p>
+                        <a href="Fullstack-2/listaProductos.html" class="btn btn-primary">Ver Consolas</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card bg-dark text-light">
+                    <img src="Fullstack-2/img/pc gamer.png" class="card-img-top" alt="PC Gaming">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">PC Gaming</h5>
+                        <p class="card-text">Componentes y PCs armadas</p>
+                        <a href="Fullstack-2/listaProductos.html" class="btn btn-primary">Ver PCs</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card bg-dark text-light">
+                    <img src="Fullstack-2/img/hyperx_cloud.png" class="card-img-top" alt="Accesorios">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Accesorios</h5>
+                        <p class="card-text">Auriculares, mouse, teclados</p>
+                        <a href="Fullstack-2/listaProductos.html" class="btn btn-primary">Ver Accesorios</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección de información adicional -->
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h3 style="color: #39FF14;">¿Por qué elegir Level UP?</h3>
+                <ul style="color: #fdfdfd;">
+                    <li>Los mejores precios del mercado</li>
+                    <li>Productos 100% originales</li>
+                    <li>Envío rápido y seguro</li>
+                    <li>Soporte técnico especializado</li>
+                    <li>Garantía en todos nuestros productos</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <h3 style="color: #39FF14;">Únete a la Comunidad Gamer</h3>
+                <p style="color: #fdfdfd;">
+                    Descubre las últimas novedades en gaming, participa en nuestros eventos 
+                    y conecta con otros gamers. En Level UP no solo vendemos productos, 
+                    construimos una comunidad.
+                </p>
+                <div class="d-flex gap-2">
+                    <a href="Fullstack-2/registro.html" class="btn btn-success">Crear Cuenta</a>
+                    <a href="Fullstack-2/nosotros.html" class="btn btn-outline-light">Conoce Más</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer-placeholder" class="w-100"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    
+    <!-- Cargar header y footer -->
+    <script>
+        // Cargar header
+        fetch('Fullstack-2/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error cargando header:', error));
+
+        // Cargar footer
+        fetch('Fullstack-2/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Error cargando footer:', error));
+    </script>
+    
+    <!-- Scripts de funcionalidad -->
+    <script src="src/js/productos.js"></script>
+    <script src="src/js/header.js" defer></script>
+    <script src="src/js/home.js" defer></script>
+</body>
+</html>

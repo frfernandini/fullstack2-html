@@ -59,7 +59,7 @@ const productosEstaticos = {
         Titulo: "Silla Gamer Secretlab Titan ",
         Descripcion: " Diseñada para el máximo confort, esta silla ofrece un soporte ergonómico y personalización ajustable para sesiones de juego prolongadas",
         Precio: 349990,
-        imagen: "img/ps5-test.png",
+        imagen: "img/silla_gamer.png",
         oferta: false,
         descuento: 0
     },
@@ -105,3 +105,4 @@ function cargarProductosAgregados() {
     const productosJSON = localStorage.getItem('productos');
     return productosJSON ? JSON.parse(productosJSON) : {};
 }
+
