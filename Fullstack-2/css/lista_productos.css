@@ -84,6 +84,7 @@ h1 {
   text-shadow: 0 0 5px #39FF14, 0 0 10px #39FF14;
   width: 500px; /* longitud de la línea */
   margin: 0 auto; /* centrar la línea */
+  padding-top: 50px;
 }
 
 /* Precio */
@@ -120,17 +121,17 @@ h1 {
 
 /*FILTRO DE CATEGORÍAS*/
 .btn-neon {
-    background-color: #000;
-    color: #fff;
-    border: 2px solid #39FF14;
-    padding: 0.2rem 1rem;
-    border-radius: 6px;
-    cursor: pointer;
-    text-shadow: 0 0 5px #39FF14;
+  color: #fff;
+  border: 2px solid #39FF14;
+  padding: 0.2rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  text-shadow: 0 0 5px #39FF14;
 }
 
 .btn-neon:hover {
     box-shadow: 0 0 10px #39FF14;
+    background-color: #000;
 }
 
 #navbar-filtro-categorias {
@@ -138,7 +139,7 @@ h1 {
     justify-content: center;
     align-items: center;
     gap: 15px;
-    background-color: #1f1f1f96;
+    background-color: #1f1f1f00;
     width: 350px; /* longitud de la línea */
     margin: 0 auto;
     padding: 10px;
@@ -150,7 +151,7 @@ h1 {
 }
 
 #navbar-filtro-categorias .navbar-brand {
-    color: #26ff00;
+    color: #ffffff;
     font-weight: bold;
     font-size: 1.1rem;
 }
@@ -188,8 +189,22 @@ h1 {
     padding: 5px 0;
 }
 
-#navbar-filtro-categorias .dropdown-menu li {
-    list-style: none;
+/* Estilo del botón del dropdown */
+#btnDropdownCategoria {
+    min-width: 200px;     
+    text-align: center;
+    white-space: nowrap;      /* evitar que el texto haga wrap */
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #39FF14;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    text-shadow: 0 0 5px #39FF14;
+}
+
+#btnDropdownCategoria:hover {
+    box-shadow: 0 0 10px #39FF14;
 }
 
 #navbar-filtro-categorias .dropdown-menu li a {
