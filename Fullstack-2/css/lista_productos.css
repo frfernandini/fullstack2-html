@@ -84,6 +84,7 @@ h1 {
   text-shadow: 0 0 5px #39FF14, 0 0 10px #39FF14;
   width: 500px; /* longitud de la línea */
   margin: 0 auto; /* centrar la línea */
+  padding-top: 50px;
 }
 
 /* Precio */
