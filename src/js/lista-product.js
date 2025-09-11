@@ -155,4 +155,65 @@ document.addEventListener('DOMContentLoaded', function() {
     actualizarContadorCarrito(); // Actualizar contador al cargar la página
 });
 
+// Llenar el dropdown con categorías
+function cargarCategoriasDropdown() {
+    const todosLosProductos = obtenerTodosLosProductos();
+    const categorias = [];
+
+    for (let id in todosLosProductos) {
+        const cat = todosLosProductos[id].Categoria;
+        if (!categorias.includes(cat)) categorias.push(cat);
+    }
+
+    const dropdown = document.getElementById("dropdownCategorias");
+    categorias.forEach(cat => {
+        const li = document.createElement("li");
+        li.innerHTML = `<a>${cat}</a>`;
+        li.addEventListener('click', function() {
+            filtrarPorCategoria(cat);
+            document.getElementById("btnDropdownCategoria").textContent = cat;
+            dropdown.style.display = 'none'; // ocultar dropdown al seleccionar
+        });
+        dropdown.appendChild(li);
+    });
+
+    // Mostrar/ocultar dropdown al click
+    const btn = document.getElementById("btnDropdownCategoria");
+    btn.addEventListener('click', () => {
+        dropdown.style.display = dropdown.style.display === 'flex' ? 'none' : 'flex';
+    });
+}
+
+// Filtrar productos
+function filtrarPorCategoria(categoria) {
+    const container = document.getElementById("productContainer");
+    const todosLosProductos = obtenerTodosLosProductos();
+    container.innerHTML = '';
+
+    for (let id in todosLosProductos) {
+        const prod = todosLosProductos[id];
+        if (categoria === 'Todas' || prod.Categoria === categoria) {
+            const card = crearCardProducto(prod, id);
+            container.appendChild(card);
+        }
+    }
+}
+
+// Ejecutar al cargar
+document.addEventListener('DOMContentLoaded', function() {
+    cargarCategoriasDropdown();
+    mostrarProductos();
+    actualizarContadorCarrito();
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const btnTodos = document.getElementById('btnMostrarTodos');
+    if(btnTodos) {
+        btnTodos.addEventListener('click', function() {
+            mostrarProductos(); // Muestra todos los productos
+            const btnCat = document.getElementById('btnDropdownCategoria');
+            if(btnCat) btnCat.textContent = 'Seleccionar Categoría'; // Reset del texto del dropdown
+        });
+    }
+});
 

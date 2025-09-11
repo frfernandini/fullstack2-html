@@ -17,6 +17,7 @@
             .then(res => res.text())
             .then(html => {
                 document.getElementById('header-placeholder').innerHTML = html;
+                actualizarContadorCarrito();
             });
     </script>
 

@@ -105,3 +105,4 @@ function cargarProductosAgregados() {
     const productosJSON = localStorage.getItem('productos');
     return productosJSON ? JSON.parse(productosJSON) : {};
 }
+
